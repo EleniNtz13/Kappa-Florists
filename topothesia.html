@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="el">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f8f5ef">
+
+    <meta
+        name="description"
+        content="Βρείτε τα Ανθοπωλεία Κάππα στους Παπαδάτες Μακρυνείας, στο Αγρίνιο. Δείτε τη διεύθυνση, τον χάρτη και τα στοιχεία επικοινωνίας."
+    >
+
+    <title>Τοποθεσία | Ανθοπωλεία Κάππα</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+        :root {
+            --green: #263228;
+            --green2: #435b45;
+            --green3: #647b5b;
+            --cream: #f8f5ef;
+            --white: #fff;
+            --gold: #c6a66b;
+            --gold-light: #e5d4ad;
+            --text: #303b31;
+            --muted: #6d756b;
+            --line: #e8e1d5;
+            --shadow: 0 14px 38px rgba(38, 50, 40, .09);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        body {
+            margin: 0;
+            font-family: "DM Sans", Arial, sans-serif;
+            color: var(--text);
+            background: var(--cream);
+            line-height: 1.7;
+            overflow-wrap: break-word;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        a {
+            color: inherit;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .hero {
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+            color: var(--white);
+            background: var(--green);
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            z-index: -2;
+            inset: 0;
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(25, 39, 28, .88),
+                    rgba(25, 39, 28, .58)
+                ),
+                url("images/fotos/foto-1.png") center 45% / cover no-repeat;
+            transform: scale(1.02);
+        }
+
+        .hero-inner {
+            width: min(1120px, 92%);
+            margin: auto;
+            padding: 70px 0 90px;
+            text-align: center;
+        }
+
+        .brand {
+            margin: 0 0 12px;
+            color: var(--gold-light);
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 3px;
+        }
+
+        .hero h1 {
+            margin: 0;
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: clamp(38px, 6vw, 68px);
+            font-weight: 600;
+            line-height: 1.15;
+        }
+
+        .hero h1 em {
+            color: var(--gold-light);
+            font-weight: 500;
+        }
+
+        .hero-description {
+            max-width: 650px;
+            margin: 18px auto 0;
+            color: #f5f2e9;
+            font-size: clamp(16px, 2vw, 19px);
+        }
+
+        .ornament {
+            margin: 18px 0;
+            color: var(--gold-light);
+            font-size: 28px;
+        }
+
+        .wrap {
+            width: min(1120px, 92%);
+            margin: -30px auto 60px;
+            position: relative;
+        }
+
+        .panel {
+            margin-bottom: 24px;
+            padding: clamp(22px, 4vw, 42px);
+            background: var(--white);
+            border: 1px solid var(--line);
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+        }
+
+        .section-label {
+            margin: 0 0 7px;
+            color: var(--green3);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            margin: 0 0 14px;
+            color: var(--green);
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: clamp(27px, 4vw, 38px);
+            line-height: 1.25;
+        }
+
+        .lead {
+            margin: 0 0 12px;
+            color: var(--muted);
+            font-size: 17px;
+        }
+
+        .address {
+            margin: 12px 0 20px;
+            font-size: 17px;
+        }
+
+        .map-frame {
+            width: 100%;
+            height: 480px;
+            margin-top: 22px;
+            overflow: hidden;
+            background: #edf0e9;
+            border: 2px solid var(--gold);
+            border-radius: 20px;
+        }
+
+        .map-frame iframe {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 22px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            min-height: 48px;
+            padding: 12px 20px;
+            color: var(--white);
+            background: var(--green);
+            border: 1px solid var(--gold);
+            border-radius: 12px;
+            font-weight: 700;
+            text-align: center;
+            text-decoration: none;
+            transition: transform .2s, background .2s;
+        }
+
+        .btn:hover {
+            color: var(--white);
+            background: var(--green2);
+            transform: translateY(-2px);
+        }
+
+        .btn-light {
+            color: var(--green);
+            background: var(--cream);
+        }
+
+        .btn-light:hover {
+            color: var(--green);
+            background: #eee7da;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+            margin-top: 22px;
+        }
+
+        .info-card {
+            min-width: 0;
+            padding: 24px;
+            background: #fbfaf6;
+            border: 1px solid var(--line);
+            border-radius: 18px;
+        }
+
+        .info-card h3 {
+            margin: 0 0 12px;
+            color: var(--green);
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: 23px;
+        }
+
+        .info-card p {
+            margin: 7px 0;
+        }
+
+        .phone-list {
+            display: grid;
+            gap: 10px;
+        }
+
+        .phone-link {
+            display: block;
+            padding: 10px 13px;
+            background: var(--white);
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            color: var(--green);
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .phone-link:hover {
+            border-color: var(--gold);
+        }
+
+        .hours-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 9px 0;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .hours-row:last-child {
+            border-bottom: 0;
+        }
+
+        .social-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 16px;
+        }
+
+        .footer {
+            padding: 32px 18px;
+            color: var(--white);
+            background: var(--green);
+            border-top: 3px solid var(--gold);
+            text-align: center;
+        }
+
+        .footer strong {
+            color: var(--gold-light);
+            letter-spacing: 1px;
+        }
+
+        .footer p {
+            margin: 8px 0 0;
+            color: #f0eee6;
+        }
+
+        @media (max-width: 700px) {
+            .hero-inner {
+                padding: 55px 0 72px;
+            }
+
+            .brand {
+                font-size: 11px;
+                letter-spacing: 2px;
+            }
+
+            .wrap {
+                width: 94%;
+                margin-top: -22px;
+            }
+
+            .panel {
+                border-radius: 19px;
+            }
+
+            .info-grid {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .map-frame {
+                height: 400px;
+                border-radius: 15px;
+            }
+
+            .actions,
+            .social-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .hours-row {
+                flex-wrap: wrap;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .map-frame {
+                height: 340px;
+            }
+
+            .info-card {
+                padding: 19px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                transition-duration: .01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="hero">
+    <div class="hero-inner">
+
+        <p class="brand">ΑΝΘΟΠΩΛΕΙΑ ΚΑΠΠΑ</p>
+
+        <h1>
+            Βρείτε μας<br>
+            <em>στον χάρτη.</em>
+        </h1>
+
+        <div class="ornament" aria-hidden="true">❀</div>
+
+        <p class="hero-description">
+            Είμαστε εδώ για να δώσουμε χρώμα
+            στις ξεχωριστές στιγμές σας.
+            Επισκεφθείτε μας στους Παπαδάτες Μακρυνείας.
+        </p>
+
+    </div>
+</header>
+
+<main class="wrap">
+
+    <section class="panel">
+
+        <p class="section-label">Η τοποθεσία μας</p>
+
+        <h2>📍 Ανθοπωλεία Κάππα</h2>
+
+        <p class="lead">
+            Ζευγαράκι &amp; Παπαδάτες Μακρυνείας, Αγρίνιο
+        </p>
+
+        <p class="address">
+            <strong>Διεύθυνση:</strong>
+            Ζευγαράκι &amp; Παπαδάτες Μακρυνείας,
+            Αγρίνιο, ΤΚ 30011
+        </p>
+
+        <div class="map-frame">
+            <iframe
+                title="Χάρτης τοποθεσίας Ανθοπωλείων Κάππα"
+                src="https://maps.google.com/maps?q=%CE%91%CE%BD%CE%B8%CE%BF%CF%80%CE%BF%CE%BB%CE%B5%CE%AF%CE%B1%20%CE%9A%CE%AC%CF%80%CF%80%CE%B1%2C%20%CE%96%CE%B5%CF%85%CE%B3%CE%B1%CF%81%CE%AC%CE%BA%CE%B9%20%CE%BA%CE%B1%CE%B9%20%CE%A0%CE%B1%CF%80%CE%B1%CE%B4%CE%AC%CF%84%CE%B5%CF%82%20%CE%9C%CE%B1%CE%BA%CF%81%CF%85%CE%BD%CE%B5%CE%AF%CE%B1%CF%82%2C%20%CE%91%CE%B3%CF%81%CE%AF%CE%BD%CE%B9%CE%BF&output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="actions">
+
+            <a
+                class="btn"
+                href="https://www.google.com/maps/dir/?api=1&amp;destination=%CE%96%CE%B5%CF%85%CE%B3%CE%B1%CF%81%CE%AC%CE%BA%CE%B9%20%CE%BA%CE%B1%CE%B9%20%CE%A0%CE%B1%CF%80%CE%B1%CE%B4%CE%AC%CF%84%CE%B5%CF%82%20%CE%9C%CE%B1%CE%BA%CF%81%CF%85%CE%BD%CE%B5%CE%AF%CE%B1%CF%82%2C%20%CE%91%CE%B3%CF%81%CE%AF%CE%BD%CE%B9%CE%BF%2C%2030011"
+                target="_blank"
+                rel="noopener noreferrer">
+                📍 Οδηγίες μετάβασης
+            </a>
+
+            <a class="btn btn-light" href="index.html">
+                ← Αρχική σελίδα
+            </a>
+
+        </div>
+
+    </section>
+
+    <section class="panel">
+
+        <p class="section-label">Είμαστε στη διάθεσή σας</p>
+
+        <h2>Επικοινωνία &amp; ωράριο</h2>
+
+        <p class="lead">
+            Επικοινωνήστε μαζί μας για ανθοδέσμες,
+            ανθοσυνθέσεις, φυτά και ανθοστολισμούς.
+        </p>
+
+        <div class="info-grid">
+
+            <div class="info-card">
+
+                <h3>☎ Τηλέφωνα</h3>
+
+                <div class="phone-list">
+
+                    <a class="phone-link" href="tel:+302635051011">
+                        ☎ 2635 051011
+                    </a>
+
+                    <a class="phone-link" href="tel:+306958786970">
+                        ☎ 6958 786970
+                    </a>
+
+                    <a class="phone-link" href="tel:+306943153089">
+                        ☎ 6943 153089
+                    </a>
+
+                </div>
+
+                <div class="social-actions">
+
+                    <a
+                        class="btn"
+                        href="https://m.me/anthopoleia.kappa"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        ✉ Στείλτε μήνυμα
+                    </a>
+
+                    <a
+                        class="btn btn-light"
+                        href="https://www.facebook.com/anthopoleia.kappa?locale=el_GR"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        Facebook
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="info-card">
+
+                <h3>◷ Ωράριο λειτουργίας</h3>
+
+                <div class="hours-row">
+                    <strong>Θερινό</strong>
+                    <span>08:00–13:00</span>
+                </div>
+
+                <div class="hours-row">
+                    <strong>Απόγευμα</strong>
+                    <span>17:00–21:00</span>
+                </div>
+
+                <div class="hours-row">
+                    <strong>Χειμερινό</strong>
+                    <span>08:00–20:00</span>
+                </div>
+
+                <p style="margin-top:14px;color:var(--muted);font-size:14px">
+                    Το ωράριο αναγράφεται σύμφωνα με τις
+                    πληροφορίες του καταστήματος.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+<footer class="footer">
+
+    <strong>ΑΝΘΟΠΩΛΕΙΑ ΚΑΠΠΑ ❀</strong>
+
+    <p>
+        Εσύ το φαντάζεσαι. Εμείς το δημιουργούμε.
+    </p>
+
+    <p>
+        Ζευγαράκι &amp; Παπαδάτες Μακρυνείας,
+        Αγρίνιο, ΤΚ 30011
+    </p>
+
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,552 @@
+/* =========================================================
+   SERVICES.CSS — ΜΟΝΟ οι κανόνες της σελίδας Υπηρεσιών
+   Τα κοινά στοιχεία (header, menu, footer, reset) βρίσκονται
+   στο style.css και δεν επαναλαμβάνονται εδώ.
+   ========================================================= */
+
+/* ======================== HERO ======================== */
+.services-hero {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 620px;
+    overflow: hidden;
+    background: #132f23;
+}
+
+.services-hero > img {
+    position: absolute;
+    z-index: 1;
+    width: 15vw;
+    height: 430px;
+    max-width: none;
+    object-fit: cover;
+    object-position: center;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, .22);
+    transition: transform .45s ease, box-shadow .45s ease;
+}
+
+.services-hero > img:nth-of-type(1) { left: -1%; top: 85px; transform: rotate(-4deg); }
+.services-hero > img:nth-of-type(2) { left: 9%; top: 35px; transform: rotate(3deg); }
+.services-hero > img:nth-of-type(3) { left: 19%; top: 95px; transform: rotate(-2deg); }
+.services-hero > img:nth-of-type(4) { left: 30%; top: 25px; transform: rotate(4deg); }
+.services-hero > img:nth-of-type(5) { left: 41%; top: 90px; transform: rotate(-3deg); }
+.services-hero > img:nth-of-type(6) { left: 52%; top: 30px; transform: rotate(2deg); }
+.services-hero > img:nth-of-type(7) { left: 63%; top: 95px; transform: rotate(-4deg); }
+.services-hero > img:nth-of-type(8) { left: 74%; top: 35px; transform: rotate(3deg); }
+.services-hero > img:nth-of-type(9) { left: 85%; top: 85px; transform: rotate(-2deg); }
+
+.services-hero > img:hover {
+    z-index: 40;
+    transform: scale(1.12) rotate(0deg);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, .4);
+}
+
+.services-hero-overlay {
+    position: absolute;
+    z-index: 20;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(10,35,24,.55), rgba(10,35,24,.22), rgba(10,35,24,.55));
+    pointer-events: none;
+}
+
+.services-hero-content {
+    position: absolute;
+    z-index: 30;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100%;
+    padding: 40px 20px;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 3px 18px rgba(0,0,0,.55);
+    pointer-events: none;
+}
+
+.services-eyebrow {
+    margin: 0 0 18px;
+    color: #f0dfb1;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .32em;
+}
+
+.services-rule {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin: 0 0 25px;
+    color: #f0dfb1;
+    font: 25px "Playfair Display", Georgia, serif;
+}
+
+.services-rule span {
+    display: block;
+    width: 85px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #f0dfb1);
+}
+
+.services-rule span:last-child { background: linear-gradient(90deg, #f0dfb1, transparent); }
+
+.services-hero-content h1 {
+    margin: 0;
+    color: #fff;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(42px, 6vw, 72px);
+    font-weight: 500;
+    line-height: 1.08;
+    letter-spacing: -.02em;
+}
+
+.services-hero-content h1 em { color: #f0dfb1; font-style: italic; font-weight: 400; }
+
+.services-hero-text {
+    width: min(560px, 90%);
+    margin: 25px auto 0;
+    color: rgba(255,255,255,.94);
+    font-size: 14px;
+    line-height: 1.85;
+}
+
+/* ==================== INTRO STATEMENT ==================== */
+.floral-statement {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 540px;
+    overflow: hidden;
+    color: #173d2b;
+    background: #f3eee5;
+    border-block: 1px solid #e1d8c9;
+}
+
+.floral-statement::before,
+.floral-statement::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    border: 1px solid rgba(181,154,99,.22);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+.floral-statement::before { width: 620px; height: 620px; }
+.floral-statement::after { width: 440px; height: 440px; border-color: rgba(181,154,99,.14); }
+
+.floral-statement-content {
+    position: relative;
+    z-index: 1;
+    width: min(850px, 90%);
+    padding: 95px 30px;
+    text-align: center;
+}
+
+.floral-eyebrow {
+    margin: 0 0 20px;
+    color: #a48650;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .32em;
+}
+
+.floral-statement h2 {
+    margin: 0;
+    color: #173d2b;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(42px, 5.5vw, 68px);
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: -.02em;
+}
+.floral-statement h2 em { color: #a48650; font-style: italic; font-weight: 400; }
+
+.floral-symbol {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin: 30px auto 27px;
+    color: #b59a63;
+    font: 28px "Playfair Display", Georgia, serif;
+}
+.floral-symbol::before,
+.floral-symbol::after {
+    content: "";
+    width: 85px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #b59a63);
+}
+.floral-symbol::after { background: linear-gradient(90deg, #b59a63, transparent); }
+
+.floral-description {
+    width: min(680px, 100%);
+    margin: auto;
+    color: #626c64;
+    font-size: 14px;
+    line-height: 1.95;
+}
+
+.floral-statement-decoration {
+    position: absolute;
+    top: 50%;
+    width: 180px;
+    height: 180px;
+    border: 1px solid rgba(181,154,99,.16);
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
+.floral-decoration-left { left: -90px; }
+.floral-decoration-right { right: -90px; }
+
+/* ====================== CATEGORY CARDS ====================== */
+.services-categories {
+    padding: 100px 5%;
+    background: #eee9df;
+}
+
+.services-categories-header {
+    width: min(900px, 100%);
+    margin: 0 auto 50px;
+    text-align: center;
+}
+.services-categories-header .kicker {
+    margin-bottom: 11px;
+    color: #b59a63;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .25em;
+}
+.services-categories-header h2 {
+    color: #173d2b;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(34px, 4vw, 52px);
+    font-weight: 500;
+    line-height: 1.2;
+}
+.service-line { width: 65px; height: 1px; margin: 20px auto; background: #b59a63; }
+.services-categories-header > p:last-child {
+    max-width: 620px;
+    margin: 0 auto;
+    color: #626c64;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.services-categories .categories-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: clamp(12px, 1.8vw, 22px);
+    width: min(1180px, 100%);
+    margin: auto;
+}
+.services-categories .category-card {
+    display: block;
+    min-width: 0;
+    overflow: hidden;
+    color: inherit;
+    text-decoration: none;
+    background: #fff;
+    box-shadow: 0 15px 35px rgba(25,52,36,.08);
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+.services-categories .category-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 20px 45px rgba(25,52,36,.13);
+}
+.services-categories .category-image {
+    position: relative;
+    width: 100%;
+    min-width: 0;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: #eee7e1;
+}
+.services-categories .category-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform .7s ease;
+}
+.services-categories .category-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,.02), rgba(0,0,0,.12));
+    pointer-events: none;
+}
+.services-categories .category-card:hover .category-image img { transform: scale(1.06); }
+.services-categories .category-content { padding: clamp(13px, 1.7vw, 24px); }
+.services-categories .category-content .number {
+    color: #b59a63;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .15em;
+}
+.services-categories .category-content h3 {
+    margin: 7px 0 9px;
+    color: #173d2b;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(17px, 1.8vw, 24px);
+    font-weight: 500;
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+}
+.services-categories .category-content p { margin: 0; color: #727972; font-size: 12px; line-height: 1.7; }
+.services-categories .category-content .view {
+    display: block;
+    margin-top: 20px;
+    color: #173d2b;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .1em;
+}
+.services-categories .category-card:hover .view { color: #173d2b; }
+
+/* ======================== SERVICE GALLERIES ======================== */
+.service-section {
+    padding: 90px 0;
+    background: #f8f5ef;
+}
+.service-section .weddings-header,
+.service-section .baptisms-header,
+.service-section .wedding-baptism-header,
+.service-section .epitaphs-header {
+    width: min(900px, 90%);
+    margin: 0 auto;
+    text-align: center;
+}
+.service-section .kicker {
+    margin-bottom: 12px;
+    color: #b59a63;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .25em;
+}
+.service-section h2 {
+    color: #173d2b;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 500;
+    line-height: 1.2;
+}
+.service-section .weddings-header > p:not(.kicker),
+.service-section .baptisms-header > p:not(.kicker),
+.service-section .wedding-baptism-header > p:not(.kicker),
+.service-section .epitaphs-header > p:not(.kicker) {
+    color: #626c64;
+    font-size: 14px;
+    line-height: 1.8;
+}
+.service-section .service-line { margin: 20px auto; }
+
+.weddings-gallery,
+.baptisms-gallery,
+.wedding-baptism-gallery,
+.epitaphs-gallery {
+    display: grid;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    gap: 12px;
+    width: 100%;
+    max-width: 100%;
+    margin: 45px 0 0;
+    padding: 0 30px;
+    box-sizing: border-box;
+}
+.weddings-gallery img,
+.baptisms-gallery img,
+.wedding-baptism-gallery img,
+.epitaphs-gallery img {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    height: auto;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    object-position: center;
+    border: 1px solid #ddd5c8;
+    background: #eee9df;
+    cursor: pointer;
+    transition: transform .3s ease, box-shadow .3s ease, filter .3s ease;
+}
+.weddings-gallery img:hover,
+.baptisms-gallery img:hover,
+.wedding-baptism-gallery img:hover,
+.epitaphs-gallery img:hover {
+    position: relative;
+    z-index: 2;
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(20,40,25,.18);
+    filter: brightness(1.03);
+}
+
+/* ========================== LIGHTBOX ========================== */
+.services-lightbox[aria-hidden="true"] { display: none; }
+.services-lightbox[aria-hidden="false"] {
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 24px 24px;
+    background: rgba(8, 18, 12, .92);
+}
+#servicesLightboxImage {
+    display: block;
+    max-width: min(100%, 1200px);
+    max-height: calc(100vh - 90px);
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    box-shadow: 0 12px 40px rgba(0,0,0,.35);
+}
+.services-lightbox-close {
+    position: absolute;
+    top: 18px;
+    right: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border: 1px solid rgba(255,255,255,.55);
+    border-radius: 50%;
+    color: #fff;
+    background: transparent;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* ======================== RESPONSIVE ======================== */
+@media (max-width: 1100px) {
+    .services-hero { min-height: 560px; }
+    .services-hero > img { width: 18vw; height: 360px; }
+    .services-hero > img:nth-of-type(1) { left: -4%; }
+    .services-hero > img:nth-of-type(2) { left: 7%; }
+    .services-hero > img:nth-of-type(3) { left: 18%; }
+    .services-hero > img:nth-of-type(4) { left: 29%; }
+    .services-hero > img:nth-of-type(5) { left: 40%; }
+    .services-hero > img:nth-of-type(6) { left: 51%; }
+    .services-hero > img:nth-of-type(7) { left: 62%; }
+    .services-hero > img:nth-of-type(8) { left: 73%; }
+    .services-hero > img:nth-of-type(9) { left: 84%; }
+    .services-categories .categories-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .weddings-gallery, .baptisms-gallery, .wedding-baptism-gallery, .epitaphs-gallery {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 800px) {
+    .services-categories { padding: 75px 5%; }
+    .services-categories-header { margin-bottom: 40px; }
+    .services-categories .categories-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .services-categories .category-content { padding: 16px; }
+    .services-categories .category-content h3 { font-size: clamp(17px, 3vw, 21px); }
+    .services-categories .category-content p { font-size: 12px; line-height: 1.6; }
+    .floral-statement { min-height: 0; }
+    .floral-statement-content { padding: 75px 18px; }
+    .floral-statement h2 { font-size: clamp(34px, 7vw, 48px); }
+    .floral-eyebrow { font-size: 9px; letter-spacing: .23em; }
+    .floral-description { font-size: 13px; line-height: 1.8; }
+    .services-hero { min-height: 650px; }
+    .services-hero > img { width: 31vw; height: 180px; }
+    .services-hero > img:nth-of-type(1) { left: 0; top: 35px; }
+    .services-hero > img:nth-of-type(2) { left: 34%; top: 20px; }
+    .services-hero > img:nth-of-type(3) { left: 68%; top: 40px; }
+    .services-hero > img:nth-of-type(4) { left: 0; top: 220px; }
+    .services-hero > img:nth-of-type(5) { left: 34%; top: 205px; }
+    .services-hero > img:nth-of-type(6) { left: 68%; top: 225px; }
+    .services-hero > img:nth-of-type(7) { left: 0; top: 405px; }
+    .services-hero > img:nth-of-type(8) { left: 34%; top: 390px; }
+    .services-hero > img:nth-of-type(9) { left: 68%; top: 410px; }
+    .services-hero-content { padding: 30px 18px; }
+    .services-eyebrow { margin-bottom: 14px; font-size: 9px; letter-spacing: .23em; }
+    .services-rule { margin-bottom: 20px; font-size: 21px; }
+    .services-rule span { width: 50px; }
+    .services-hero-content h1 { font-size: clamp(35px, 7vw, 48px); line-height: 1.12; }
+    .services-hero-text { width: 92%; margin-top: 20px; font-size: 12px; line-height: 1.75; }
+    .weddings-gallery, .baptisms-gallery, .wedding-baptism-gallery, .epitaphs-gallery {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+        padding: 0 15px;
+        margin-top: 35px;
+    }
+    .service-section { padding: 70px 0; }
+}
+
+@media (max-width: 599px) {
+    .weddings-gallery, .baptisms-gallery, .wedding-baptism-gallery, .epitaphs-gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .services-hero { min-height: 500px; }
+    .services-hero > img { width: 37vw; height: 165px; }
+    .services-hero > img:nth-of-type(1), .services-hero > img:nth-of-type(4), .services-hero > img:nth-of-type(7) { left: -3vw; }
+    .services-hero > img:nth-of-type(2), .services-hero > img:nth-of-type(5), .services-hero > img:nth-of-type(8) { left: 31.5vw; }
+    .services-hero > img:nth-of-type(3), .services-hero > img:nth-of-type(6), .services-hero > img:nth-of-type(9) { left: auto; right: -3vw; }
+    .services-categories { padding: 65px 5%; }
+    .services-categories .categories-grid { gap: 11px; }
+    .services-categories .category-content { padding: 12px; }
+    .services-categories .category-content h3 { font-size: 17px; }
+    .services-categories .category-content .view { margin-top: 14px; }
+    .floral-symbol { gap: 12px; margin: 24px auto; }
+    .floral-symbol::before, .floral-symbol::after { width: 48px; }
+    .service-section h2 { font-size: 32px; }
+    .weddings-gallery, .baptisms-gallery, .wedding-baptism-gallery, .epitaphs-gallery { padding: 0 15px; gap: 10px; }
+}
+
+@media (max-width: 360px) {
+    .services-categories .categories-grid { grid-template-columns: 1fr; }
+    .weddings-gallery, .baptisms-gallery, .wedding-baptism-gallery, .epitaphs-gallery {
+        grid-template-columns: 1fr;
+        padding: 0 15px;
+        gap: 8px;
+    }
+    .services-hero-content h1 { font-size: 34px; }
+}
+
+@media (min-width: 1000px) and (max-width: 1199px) {
+    .weddings-gallery, .baptisms-gallery, .wedding-baptism-gallery, .epitaphs-gallery { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+}
+@media (min-width: 1200px) and (max-width: 1399px) {
+    .weddings-gallery, .baptisms-gallery, .wedding-baptism-gallery, .epitaphs-gallery { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+}
+@media (min-width: 1400px) and (max-width: 1599px) {
+    .weddings-gallery, .baptisms-gallery, .wedding-baptism-gallery, .epitaphs-gallery { grid-template-columns: repeat(7, minmax(0, 1fr)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .services-hero > img,
+    .services-categories .category-card,
+    .services-categories .category-image img,
+    .weddings-gallery img,
+    .baptisms-gallery img,
+    .wedding-baptism-gallery img,
+    .epitaphs-gallery img { transition: none; }
+    .services-hero > img:hover,
+    .services-categories .category-card:hover,
+    .weddings-gallery img:hover,
+    .baptisms-gallery img:hover,
+    .wedding-baptism-gallery img:hover,
+    .epitaphs-gallery img:hover { transform: none; }
+}

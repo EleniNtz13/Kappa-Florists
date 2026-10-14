@@ -1,0 +1,1374 @@
+/* =====================================================
+   GIFTS-PLANTS.CSS
+   Μόνο οι κανόνες της σελίδας Δώρα & Φυτά.
+   Κοινά στοιχεία: style.css
+   ===================================================== */
+
+/* =====================================================
+   HERO — PHOTO COLLAGE
+   ===================================================== */
+
+.seasonal-hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 620px;
+    overflow: hidden;
+    isolation: isolate;
+    background: linear-gradient(135deg, #102f21, #173d2b 50%, #244b38);
+}
+
+.seasonal-hero::before,
+.seasonal-hero::after {
+    content: "";
+    position: absolute;
+    border: 1px solid rgba(181,154,99,.18);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.seasonal-hero::before {
+    width: 650px;
+    height: 650px;
+    right: -240px;
+    top: -230px;
+}
+
+.seasonal-hero::after {
+    width: 300px;
+    height: 300px;
+    left: -150px;
+    bottom: -170px;
+}
+
+.seasonal-hero-decoration {
+    display: none;
+}
+
+.seasonal-hero .hero-collage {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.seasonal-hero .collage-photo {
+    position: absolute;
+    overflow: hidden;
+    background: #102f32;
+    border: 1px solid rgba(255,255,255,.12);
+    box-shadow: 0 20px 50px rgba(0,0,0,.28);
+    transition: transform .7s ease, box-shadow .7s ease;
+}
+
+.seasonal-hero .collage-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    object-fit: cover;
+    object-position: center;
+    filter: saturate(.82) contrast(1.05) brightness(.82);
+    transition: transform .8s ease, filter .8s ease;
+}
+
+/* Φωτογραφία 1 — αριστερά */
+.seasonal-hero .collage-photo:nth-child(1) {
+    width: 31%;
+    height: 72%;
+    left: 3%;
+    top: 14%;
+    transform: rotate(-3deg);
+    z-index: 2;
+}
+
+/* Φωτογραφία 2 — επάνω στο κέντρο */
+.seasonal-hero .collage-photo:nth-child(2) {
+    width: 23%;
+    height: 38%;
+    left: 35%;
+    top: 5%;
+    transform: rotate(2deg);
+    z-index: 3;
+}
+
+/* Φωτογραφία 3 — κεντρική */
+.seasonal-hero .collage-photo:nth-child(3) {
+    width: 32%;
+    height: 66%;
+    left: 34%;
+    top: 22%;
+    transform: rotate(-1deg);
+    z-index: 5;
+    border-color: rgba(217,197,138,.45);
+    box-shadow:
+        0 25px 65px rgba(0,0,0,.40),
+        0 0 0 1px rgba(217,197,138,.08);
+}
+
+/* Φωτογραφία 4 — επάνω δεξιά */
+.seasonal-hero .collage-photo:nth-child(4) {
+    width: 22%;
+    height: 34%;
+    right: 5%;
+    top: 7%;
+    transform: rotate(3deg);
+    z-index: 3;
+}
+
+/* Φωτογραφία 5 — δεξιά */
+.seasonal-hero .collage-photo:nth-child(5) {
+    width: 27%;
+    height: 47%;
+    right: 2%;
+    top: 38%;
+    transform: rotate(-2deg);
+    z-index: 4;
+}
+
+/* Φωτογραφία 6 — κάτω αριστερά */
+.seasonal-hero .collage-photo:nth-child(6) {
+    width: 22%;
+    height: 30%;
+    left: 16%;
+    bottom: 3%;
+    transform: rotate(3deg);
+    z-index: 6;
+}
+
+/* Φωτογραφία 7 — κάτω στο κέντρο */
+.seasonal-hero .collage-photo:nth-child(7) {
+    width: 18%;
+    height: 27%;
+    left: 48%;
+    bottom: 2%;
+    transform: rotate(-3deg);
+    z-index: 7;
+}
+
+/* Φωτογραφία 8 — μικρή λεπτομέρεια */
+.seasonal-hero .collage-photo:nth-child(8) {
+    width: 15%;
+    height: 24%;
+    right: 20%;
+    bottom: 4%;
+    transform: rotate(4deg);
+    z-index: 8;
+}
+
+.seasonal-hero .collage-photo:hover {
+    transform: translateY(-8px) rotate(0deg) scale(1.02);
+    z-index: 20;
+    box-shadow: 0 30px 70px rgba(0,0,0,.45);
+}
+
+.seasonal-hero .collage-photo:hover img {
+    transform: scale(1.06);
+    filter: saturate(1) contrast(1.05) brightness(.95);
+}
+
+/* Διακριτικό overlay επάνω στις φωτογραφίες */
+.seasonal-hero .hero-collage::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 9;
+    pointer-events: none;
+    background: linear-gradient(
+        135deg,
+        rgba(7,25,21,.30),
+        rgba(7,25,21,.18) 45%,
+        rgba(7,25,21,.38)
+    );
+    box-shadow: inset 0 0 140px rgba(0,0,0,.38);
+}
+
+.seasonal-hero .hero-collage::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    pointer-events: none;
+    background: linear-gradient(
+        90deg,
+        rgba(7,31,34,.22),
+        transparent 30%,
+        transparent 70%,
+        rgba(7,31,34,.22)
+    );
+    mix-blend-mode: multiply;
+}
+
+/* =====================================================
+   HERO CONTENT
+   ===================================================== */
+
+.seasonal-hero-content {
+    position: relative;
+    z-index: 20;
+    width: min(900px, 90%);
+    min-height: 620px;
+    margin: 0 auto;
+    padding: 90px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    text-shadow: 0 3px 18px rgba(0,0,0,.35);
+}
+
+.seasonal-hero-content > p {
+    margin-bottom: 18px;
+    color: #d9c58a;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .30em;
+}
+
+.seasonal-hero-content h1 {
+    color: #fff;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(46px, 7vw, 82px);
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -.02em;
+}
+
+.seasonal-hero-content h1 em {
+    color: #f5e7b5;
+    font-style: italic;
+    font-weight: 400;
+}
+
+.hero-rule {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin: 25px auto;
+    color: #d9c58a;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 25px;
+}
+
+.hero-rule span {
+    display: block;
+    width: 90px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #d9c58a);
+}
+
+.hero-rule span:last-child {
+    background: linear-gradient(90deg, #d9c58a, transparent);
+}
+
+.hero-intro {
+    width: min(620px, 100%);
+    margin: 0 auto;
+    color: rgba(255,255,255,.90);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+/* =====================================================
+   GENERAL SECTIONS
+   ===================================================== */
+
+.section {
+    width: min(1500px, 95%);
+    margin: 0 auto;
+    padding: 100px 0;
+}
+
+.section-title {
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.section-title > p {
+    margin-bottom: 11px;
+    color: #b59a63;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .25em;
+}
+
+.section-title h2 {
+    color: #173d2b;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(34px, 4vw, 52px);
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.title-decoration {
+    margin-top: 16px;
+    color: #b59a63;
+    font-size: 25px;
+}
+
+/* =====================================================
+   INTRODUCTION
+   ===================================================== */
+
+.seasonal-intro {
+    padding-bottom: 90px;
+}
+
+.intro-text {
+    width: min(820px, 100%);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 45px;
+}
+
+.intro-text p {
+    color: #626c64;
+    font-size: 15px;
+    line-height: 1.95;
+    text-align: center;
+}
+
+/* =====================================================
+   CATEGORY SELECTOR
+   ===================================================== */
+
+.seasonal-selector {
+    padding: 100px 0;
+    background: #eee9df;
+}
+
+.selector-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.selector-heading p {
+    margin-bottom: 11px;
+    color: #b59a63;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .25em;
+}
+
+.selector-heading h2 {
+    max-width: 700px;
+    color: #173d2b;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(34px, 4vw, 52px);
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.selector-symbol {
+    flex: 0 0 70px;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(181,154,99,.33);
+    border-radius: 50%;
+    color: #b59a63;
+    font-size: 28px;
+}
+
+/* =====================================================
+   CATEGORY CARDS
+   Desktop: 4 | Tablet: 3 | Mobile: 2
+   ===================================================== */
+
+.season-cards {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: clamp(12px, 1.8vw, 22px);
+    width: min(1180px, 100%);
+    margin: 0 auto;
+}
+
+.season-card {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    overflow: hidden;
+    background: #fff;
+    color: inherit;
+    text-decoration: none;
+    box-shadow: 0 15px 35px rgba(25,52,36,.08);
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.season-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 20px 45px rgba(25,52,36,.13);
+}
+
+.season-card-art {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: #eee7e1;
+}
+
+.season-card-art img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform .5s ease;
+}
+
+.season-card:hover .season-card-art img {
+    transform: scale(1.04);
+}
+
+/* Κατηγορίες χωρίς εικόνα */
+.christmas-card .season-card-art {
+    background: linear-gradient(135deg, #e5ddd3, #f7f2e9);
+}
+
+.epitaph-card .season-card-art {
+    background: linear-gradient(135deg, #dfe5df, #f3f4ef);
+}
+
+.easter-card .season-card-art {
+    background: linear-gradient(135deg, #e9e1d7, #faf4e9);
+}
+
+/* Τα παλιά διακοσμητικά εικονίδια δεν χρησιμοποιούνται */
+.season-card-art::before,
+.season-card-art span,
+.season-card-art small {
+    display: none;
+}
+
+.season-card-content {
+    padding: clamp(12px, 1.7vw, 24px);
+}
+
+.season-card-content .number {
+    color: #b59a63;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .15em;
+}
+
+.season-card-content h3 {
+    margin: 7px 0 9px;
+    color: #173d2b;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(17px, 1.8vw, 24px);
+    font-weight: 500;
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+}
+
+.season-card-content p {
+    min-height: 0;
+    color: #727972;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.season-link {
+    display: block;
+    margin-top: 20px;
+    color: #173d2b;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .10em;
+}
+
+/* =====================================================
+   GALLERY SECTIONS
+   ===================================================== */
+
+.seasonal-gallery {
+    padding-bottom: 70px;
+}
+
+.season-block {
+    margin-bottom: 15px;
+    padding: 20px 0 95px;
+    scroll-margin-top: 115px;
+}
+
+.season-block + .season-block {
+    padding-top: 85px;
+    border-top: 0;
+}
+
+.season-heading {
+    display: grid;
+    grid-template-columns: 75px minmax(0, 1fr);
+    align-items: start;
+    gap: 22px;
+    margin-bottom: 20px;
+}
+
+.season-number {
+    width: 58px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(181,154,99,.33);
+    border-radius: 50%;
+    color: #b59a63;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 18px;
+}
+
+.season-heading p {
+    margin-bottom: 6px;
+    color: #b59a63;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .20em;
+}
+
+.season-heading h3 {
+    color: #173d2b;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 1.25;
+}
+
+.season-description {
+    width: min(760px, 100%);
+    margin: 0 0 30px 97px;
+}
+
+.season-description p {
+    color: #626c64;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+/* =====================================================
+   GENERAL PHOTO GRID
+   ===================================================== */
+
+.season-block .season-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    gap: 15px;
+    width: 100%;
+    margin-left: 0;
+}
+
+.season-block .season-photo {
+    position: relative;
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
+    aspect-ratio: 1 / 1.2;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    background: #f5f1ec;
+}
+
+.season-photo span {
+    width: 80%;
+    color: #7b817a;
+    font-size: 12px;
+    line-height: 1.7;
+    font-style: italic;
+    text-align: center;
+}
+
+.season-block .season-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    object-fit: cover;
+    object-position: center;
+    transition: transform .5s ease;
+}
+
+.season-block .season-photo:hover img {
+    transform: scale(1.04);
+}
+
+/* Προαιρετικά placeholders */
+.placeholder-christmas {
+    background:
+        radial-gradient(circle at 50% 35%, rgba(181,154,99,.20), transparent 25%),
+        linear-gradient(135deg, #ddd3c7, #f4eee5);
+}
+
+.placeholder-epitaph {
+    background:
+        radial-gradient(circle at 50% 35%, rgba(181,154,99,.12), transparent 25%),
+        linear-gradient(135deg, #dce2dc, #f1f2ec);
+}
+
+.placeholder-easter {
+    background:
+        radial-gradient(circle at 50% 35%, rgba(181,154,99,.18), transparent 25%),
+        linear-gradient(135deg, #e7ddd0, #faf4e9);
+}
+
+/* Για τυχόν επιπλέον gallery-item */
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    background: #f5f1ec;
+}
+
+.gallery-item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.04);
+}
+
+/* =====================================================
+   GIFTS / PLANTS PHOTO GALLERY
+   #gifts: responsive columns based on viewport width
+   ===================================================== */
+
+#gifts {
+    width: 100%;
+}
+
+#gifts .season-gallery-grid {
+    display: grid !important;
+    grid-template-columns: repeat(8, minmax(0, 1fr)) !important;
+    gap: 15px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    box-sizing: border-box;
+}
+
+#gifts .season-gallery-grid .season-photo {
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    height: auto !important;
+    aspect-ratio: 1 / 1.2 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    border: 0 !important;
+    box-sizing: border-box;
+}
+
+#gifts .season-gallery-grid .season-photo img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    object-fit: cover !important;
+    object-position: center !important;
+}
+
+/* Έως 360px: 1 φωτογραφία */
+@media (max-width: 360px) {
+    #gifts .season-gallery-grid {
+        grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+        gap: 10px !important;
+    }
+
+    #gifts .season-gallery-grid .season-photo {
+        aspect-ratio: 1 / 1 !important;
+    }
+}
+
+/* 361–599px: 2 φωτογραφίες */
+@media (min-width: 361px) and (max-width: 599px) {
+    #gifts .season-gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 10px !important;
+    }
+}
+
+/* 600–799px: 3 φωτογραφίες */
+@media (min-width: 600px) and (max-width: 799px) {
+    #gifts .season-gallery-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        gap: 12px !important;
+    }
+}
+
+/* 800–999px: 4 φωτογραφίες */
+@media (min-width: 800px) and (max-width: 999px) {
+    #gifts .season-gallery-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+        gap: 12px !important;
+    }
+}
+
+/* 1000–1199px: 5 φωτογραφίες */
+@media (min-width: 1000px) and (max-width: 1199px) {
+    #gifts .season-gallery-grid {
+        grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+        gap: 12px !important;
+    }
+}
+
+/* 1200–1399px: 6 φωτογραφίες */
+@media (min-width: 1200px) and (max-width: 1399px) {
+    #gifts .season-gallery-grid {
+        grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+        gap: 12px !important;
+    }
+}
+
+/* 1400–1599px: 7 φωτογραφίες */
+@media (min-width: 1400px) and (max-width: 1599px) {
+    #gifts .season-gallery-grid {
+        grid-template-columns: repeat(7, minmax(0, 1fr)) !important;
+        gap: 14px !important;
+    }
+}
+
+/* Από 1600px: 8 φωτογραφίες */
+@media (min-width: 1600px) {
+    #gifts .season-gallery-grid {
+        grid-template-columns: repeat(8, minmax(0, 1fr)) !important;
+        gap: 15px !important;
+    }
+}
+
+/* =====================================================
+   PHOTO NOTE
+   ===================================================== */
+
+.photo-note {
+    background: #eee9df;
+}
+
+.photo-note-box {
+    display: grid;
+    grid-template-columns: 80px minmax(0, 1fr);
+    align-items: start;
+    gap: 30px;
+    width: min(900px, 100%);
+    margin: 0 auto;
+    padding: 42px 50px;
+    background: #f8f5ef;
+    border: 1px solid #ddd5c8;
+}
+
+.photo-note-icon {
+    width: 65px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(181,154,99,.33);
+    border-radius: 50%;
+    color: #b59a63;
+    font-size: 27px;
+}
+
+.photo-note-box h3 {
+    margin-bottom: 15px;
+    color: #173d2b;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+.photo-note-box p {
+    margin-bottom: 14px;
+    color: #626c64;
+    font-size: 14px;
+    line-height: 1.85;
+}
+
+.photo-note-box p:last-child {
+    margin-bottom: 0;
+}
+
+.photo-note-box .note {
+    color: #7b817a;
+    font-size: 12px;
+}
+
+/* =====================================================
+   PAGE CTA SECTION
+   Δεν αφορά τα κοινά κουμπιά κεφαλίδας του style.css
+   ===================================================== */
+
+.cta {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 430px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #102f21, #173d2b 55%, #244b38);
+}
+
+.cta::before,
+.cta::after {
+    content: "";
+    position: absolute;
+    border: 1px solid rgba(181,154,99,.18);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.cta::before {
+    width: 500px;
+    height: 500px;
+    right: -200px;
+    top: -250px;
+}
+
+.cta::after {
+    width: 260px;
+    height: 260px;
+    left: -120px;
+    bottom: -150px;
+    border-color: rgba(248,245,239,.08);
+}
+
+.cta-shade {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(181,154,99,.08), transparent 50%);
+}
+
+.cta-content {
+    position: relative;
+    z-index: 2;
+    width: min(850px, 90%);
+    padding: 80px 20px;
+    color: #fff;
+    text-align: center;
+}
+
+.cta-content > p {
+    margin-bottom: 14px;
+    color: #d4c18e;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .28em;
+}
+
+.cta-content h2 {
+    margin-bottom: 20px;
+    color: #fff;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(35px, 5vw, 58px);
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.cta-message {
+    width: min(580px, 100%);
+    margin: 0 auto;
+    color: rgba(255,255,255,.88);
+    font-size: 15px;
+    line-height: 1.85;
+}
+
+.cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 30px;
+}
+
+.cta-actions a {
+    min-width: 180px;
+    padding: 14px 22px;
+    border: 1px solid #d4c18e;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .10em;
+    transition: background .25s ease, color .25s ease, transform .25s ease;
+}
+
+.cta-actions a:first-child {
+    background: #b59a63;
+    border-color: #b59a63;
+}
+
+.cta-actions a:hover {
+    transform: translateY(-2px);
+    background: #fff;
+    color: #173d2b;
+}
+
+/* =====================================================
+   TABLET — GENERAL PAGE LAYOUT
+   ===================================================== */
+
+@media (max-width: 1100px) {
+    .season-block .season-gallery-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .season-description {
+        margin-left: 0;
+    }
+
+    .season-cards {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* =====================================================
+   MOBILE — HERO, INTRO, GALLERY AND CTA
+   ===================================================== */
+
+@media (max-width: 800px) {
+    .seasonal-hero {
+        min-height: 650px;
+    }
+
+    .seasonal-hero-content {
+        width: 94%;
+        min-height: 650px;
+        padding: 40px 10px;
+    }
+
+    .seasonal-hero-content > p {
+        font-size: 9px;
+        letter-spacing: .20em;
+    }
+
+    .seasonal-hero-content h1 {
+        font-size: clamp(38px, 11vw, 58px);
+    }
+
+    .hero-rule {
+        margin: 22px auto;
+    }
+
+    .hero-rule span {
+        width: 45px;
+    }
+
+    .hero-intro {
+        width: 90%;
+        font-size: 12px;
+        line-height: 1.8;
+    }
+
+    /* Κολάζ κινητού */
+    .seasonal-hero .collage-photo:nth-child(1) {
+        width: 42%;
+        height: 32%;
+        left: 3%;
+        top: 7%;
+    }
+
+    .seasonal-hero .collage-photo:nth-child(2) {
+        width: 38%;
+        height: 25%;
+        left: auto;
+        right: 4%;
+        top: 4%;
+    }
+
+    .seasonal-hero .collage-photo:nth-child(3) {
+        width: 54%;
+        height: 39%;
+        left: 23%;
+        top: 28%;
+    }
+
+    .seasonal-hero .collage-photo:nth-child(4) {
+        width: 35%;
+        height: 25%;
+        left: 2%;
+        right: auto;
+        top: 42%;
+    }
+
+    .seasonal-hero .collage-photo:nth-child(5) {
+        width: 36%;
+        height: 27%;
+        right: 2%;
+        top: 52%;
+    }
+
+    .seasonal-hero .collage-photo:nth-child(6) {
+        width: 32%;
+        height: 22%;
+        left: 8%;
+        bottom: 3%;
+    }
+
+    .seasonal-hero .collage-photo:nth-child(7) {
+        width: 31%;
+        height: 20%;
+        left: 35%;
+        bottom: 2%;
+    }
+
+    .seasonal-hero .collage-photo:nth-child(8) {
+        width: 27%;
+        height: 19%;
+        right: 5%;
+        bottom: 5%;
+    }
+
+    .section {
+        width: 90%;
+        padding: 70px 0;
+    }
+
+    .section-title {
+        margin-bottom: 38px;
+    }
+
+    .section-title > p {
+        font-size: 9px;
+        letter-spacing: .18em;
+    }
+
+    .section-title h2 {
+        font-size: 34px;
+    }
+
+    .seasonal-intro {
+        padding-bottom: 65px;
+    }
+
+    .intro-text {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .intro-text p {
+        font-size: 14px;
+    }
+
+    .seasonal-selector {
+        padding: 75px 0;
+    }
+
+    .selector-heading {
+        align-items: flex-start;
+        margin-bottom: 40px;
+    }
+
+    .selector-heading h2 {
+        font-size: 34px;
+    }
+
+    .selector-symbol {
+        flex-basis: 55px;
+        width: 55px;
+        height: 55px;
+        font-size: 23px;
+    }
+
+    .season-cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    .season-card-content {
+        padding: 16px;
+    }
+
+    .season-card-content h3 {
+        font-size: clamp(17px, 3vw, 21px);
+    }
+
+    .season-card-content p {
+        font-size: 12px;
+        line-height: 1.6;
+    }
+
+    .seasonal-gallery {
+        padding-bottom: 40px;
+    }
+
+    .season-block {
+        padding: 10px 0 65px;
+        scroll-margin-top: 85px;
+    }
+
+    .season-block + .season-block {
+        padding-top: 60px;
+    }
+
+    .season-heading {
+        grid-template-columns: 58px minmax(0, 1fr);
+        gap: 15px;
+        margin-bottom: 18px;
+    }
+
+    .season-number {
+        width: 48px;
+        height: 48px;
+        font-size: 15px;
+    }
+
+    .season-heading p {
+        font-size: 9px;
+        letter-spacing: .13em;
+    }
+
+    .season-heading h3 {
+        font-size: 27px;
+    }
+
+    .season-description {
+        width: 100%;
+        margin: 0 0 25px;
+    }
+
+    .season-description p {
+        font-size: 13px;
+    }
+
+    .season-block .season-gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .photo-note-box {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 30px 25px;
+    }
+
+    .photo-note-icon {
+        width: 55px;
+        height: 55px;
+        font-size: 23px;
+    }
+
+    .photo-note-box h3 {
+        font-size: 25px;
+    }
+
+    .photo-note-box p {
+        font-size: 13px;
+    }
+
+    .cta {
+        min-height: 450px;
+    }
+
+    .cta-content {
+        width: 94%;
+        padding: 70px 15px;
+    }
+
+    .cta-content > p {
+        font-size: 9px;
+        letter-spacing: .18em;
+    }
+
+    .cta-content h2 {
+        font-size: 37px;
+    }
+
+    .cta-message {
+        font-size: 14px;
+    }
+
+    .cta-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .cta-actions a {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* =====================================================
+   SMALL MOBILE
+   ===================================================== */
+
+@media (max-width: 480px) {
+    .seasonal-hero {
+        min-height: 600px;
+    }
+
+    .seasonal-hero-content {
+        min-height: 600px;
+        padding: 55px 15px;
+    }
+
+    .seasonal-hero-content h1 {
+        font-size: 36px;
+    }
+
+    .hero-intro {
+        font-size: 11px;
+    }
+
+    .seasonal-hero .collage-photo:nth-child(3) {
+        width: 56%;
+        height: 38%;
+        left: 22%;
+        top: 29%;
+    }
+
+    .section {
+        width: 92%;
+    }
+
+    .section-title h2 {
+        font-size: 30px;
+    }
+
+    .selector-heading {
+        gap: 15px;
+    }
+
+    .selector-symbol {
+        display: none;
+    }
+
+    .season-heading {
+        grid-template-columns: 1fr;
+    }
+
+    .season-number {
+        margin-bottom: 5px;
+    }
+
+    .season-heading h3 {
+        font-size: 25px;
+    }
+
+    .photo-note-box {
+        padding: 25px 20px;
+    }
+
+    .cta-content h2 {
+        font-size: 32px;
+    }
+
+    .cta-actions a {
+        max-width: none;
+    }
+
+    .season-cards {
+        gap: 11px;
+    }
+
+    .season-card-content {
+        padding: 12px;
+    }
+
+    .season-card-content h3 {
+        font-size: 17px;
+    }
+
+    .season-card-content .season-link {
+        margin-top: 14px;
+        font-size: 9px;
+    }
+}
+
+/* =====================================================
+   ACCESSIBILITY — REDUCED MOTION
+   ===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .season-card,
+    .season-card-art img,
+    .season-block .season-photo img,
+    .gallery-item img,
+    .cta-actions a,
+    .seasonal-hero .collage-photo,
+    .seasonal-hero .collage-photo img {
+        transition: none;
+    }
+
+    .season-card:hover,
+    .seasonal-hero .collage-photo:hover {
+        transform: none;
+    }
+
+    .season-card:hover .season-card-art img,
+    .season-block .season-photo:hover img,
+    .gallery-item:hover img,
+    .seasonal-hero .collage-photo:hover img {
+        transform: none;
+    }
+}
+
+/* =========================================================
+   SPLIT SECTIONS
+   ========================================================= */
+
+.split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 80px;
+}
+
+.split h2 {
+    margin-bottom: 25px;
+    color: #173d2b;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(35px, 4vw, 55px);
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.split > div > p:not(.kicker):not(.signature) {
+    max-width: 540px;
+    color: #626c64;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.visual-placeholder {
+    min-height: 350px;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #e6e0d4, #f4f0e8);
+    border: 1px solid #ddd6c9;
+    color: #7a817a;
+    text-align: center;
+    box-shadow: 0 18px 45px #1934241f;
+}
+
+.signature {
+    margin-top: 28px;
+    color: #28583e !important;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 22px !important;
+    font-style: italic;
+}
+
+.season {
+    background: #fff;
+}
