@@ -2023,8 +2023,8 @@ footer p {
 }
 
 .location-icon-gold{
-    color:#a98243;
-    background:#f6f0e4;
+    color:#647b57;
+    background:#edf1e8;
 }
 
 .location-store-heading h3{
@@ -2098,4 +2098,39 @@ footer p {
     height: 428px;
     min-height: 320px;
     z-index: 1;
+}
+
+
+/* =====================================================
+   ΕΠΟΧΙΑΚΕΣ ΔΗΜΙΟΥΡΓΙΕΣ — ΒΕΛΑΚΙ ΚΑΡΤΩΝ
+   ===================================================== */
+
+.season .card .placeholder span::after {
+    display: inline-block;
+    font-size: 1em;
+    font-family: Arial, sans-serif;
+    font-weight: 400;
+    line-height: 1;
+    vertical-align: middle;
+    white-space: nowrap;
+    margin-left: 5px;
+    box-sizing: border-box;
+}
+
+/* Σταθερή εμφάνιση σε κινητά */
+@media (max-width: 800px) {
+    .season .card .placeholder span::after {
+        font-size: 12px;
+        line-height: 1;
+        vertical-align: middle;
+        margin-left: 4px;
+    }
+}
+
+@media (max-width: 360px) {
+    .season .card .placeholder span::after {
+        font-size: 10px;
+        line-height: 1;
+        margin-left: 3px;
+    }
 }
