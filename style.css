@@ -2094,3 +2094,30 @@ footer p {
         font-size: 1em;
     }
 }
+
+
+/* ΒΕΛΤΙΩΣΗ ΒΕΛΩΝ ΤΙΤΛΩΝ ΣΕ ΚΙΝΗΤΑ */
+@media (max-width: 600px) {
+    .title h2 .title-flourish {
+        display: inline-block;
+        flex: 0 0 auto;
+        width: auto;
+        min-width: 0;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 1em;
+        line-height: 1;
+        vertical-align: middle;
+        white-space: nowrap;
+        transform: none;
+    }
+
+    .title h2 .title-flourish-right {
+        transform: scaleX(-1);
+    }
+
+    .title h2 {
+        align-items: center;
+        justify-content: center;
+        gap: 0.15em;
+    }
+}
