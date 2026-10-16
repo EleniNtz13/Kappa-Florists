@@ -2055,3 +2055,48 @@ footer p {
         gap: .25em;
     }
 }
+
+/* =========================================
+   ΔΙΑΚΟΣΜΗΤΙΚΑ ΒΕΛΗ ΤΙΤΛΩΝ ❧ ☙
+   ========================================= */
+
+/* Κοινή εμφάνιση σε όλες τις συσκευές */
+
+.title h2 .title-flourish,
+.location-heading h2 .title-flourish,
+.location-flourish {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 1em;
+    line-height: 1;
+    vertical-align: middle;
+    white-space: nowrap;
+    transform: none;
+}
+
+/* Αριστερό και δεξί βέλος */
+
+.title h2 .title-flourish-right,
+.location-heading h2 .title-flourish-right {
+    transform: scaleX(-1);
+}
+
+/* Υπολογιστές — λίγο μεγαλύτερα και τα δύο βέλη */
+
+@media (min-width: 1025px) {
+    .title h2 .title-flourish,
+    .location-heading h2 .title-flourish {
+        font-size: 1.15em;
+    }
+}
+
+/* Κινητά και tablet — ίδιο μέγεθος μεταξύ τους */
+
+@media (max-width: 1024px) {
+    .title h2 .title-flourish,
+    .location-heading h2 .title-flourish {
+        font-size: 1em;
+    }
+}
